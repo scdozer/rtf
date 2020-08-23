@@ -23,18 +23,18 @@ function Ball() {
 
     const noiseFactor = 2;
 
-    for (let i = 0; i < ref.current.geometry.vertices.length; i++) {
-      const p = ref.current.geometry.vertices[i];
-      p.normalize().multiplyScalar(
-        0.3 * Math.random() + 1 * easeInOutQuad(Math.sin(2 * Math.PI * time))
-        // easeInOutQuad(Math.sin(2 * Math.PI * time)) *
-        // window.noise.perlin3(
-        //   p.x * noiseFactor + time,
-        //   p.y * noiseFactor + time,
-        //   p.z * noiseFactor + time
-        // )
-      );
-    }
+    // for (let i = 0; i < ref.current.geometry.vertices.length; i++) {
+    //   const p = ref.current.geometry.vertices[i];
+    //   p.normalize().multiplyScalar(
+    //     0.3 * Math.random() + 1 * easeInOutQuad(Math.sin(2 * Math.PI * time))
+    //     // easeInOutQuad(Math.sin(2 * Math.PI * time)) *
+    //     // window.noise.perlin3(
+    //     //   p.x * noiseFactor + time,
+    //     //   p.y * noiseFactor + time,
+    //     //   p.z * noiseFactor + time
+    //     // )
+    //   );
+    // }
     ref.current.geometry.computeVertexNormals();
     ref.current.geometry.normalsNeedUpdate = true;
     ref.current.geometry.verticesNeedUpdate = true;
