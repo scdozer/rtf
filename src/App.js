@@ -34,6 +34,12 @@ export default function App() {
             </Route>
           </Switch>
         </div>
+        <div className="footer">
+          <p>
+            by <a href="https://scottcardoza.com">scott cardoza.</a> slc, ut
+            2020
+          </p>
+        </div>
       </div>
     </Router>
   );
