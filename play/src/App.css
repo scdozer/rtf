@@ -4,13 +4,23 @@
 
 html,
 body,
-#root {
+#root,
+canvas {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
 }
+.myCanvas {
+  height: 100vh;
+  width: 100vw;
+}
 
 body {
-  background: aquamarine;
+  background: lightpink;
+}
+
+a {
+  text-decoration: none;
+  color: teal;
 }

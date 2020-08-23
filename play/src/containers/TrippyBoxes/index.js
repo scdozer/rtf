@@ -2,7 +2,7 @@ import * as THREE from "three";
 import React, { useRef } from "react";
 import { OrbitControls } from "drei";
 import { Canvas, useFrame } from "react-three-fiber";
-import "./App.css";
+// import "./App.css";
 
 const tempObject = new THREE.Object3D();
 
@@ -40,22 +40,20 @@ function Boxes() {
 function Scene() {
   return (
     <>
-      <ambientLight />
+      <ambientLight intensity={0.5} />
       <pointLight castShadow={true} intensity={0.6} position={[0, 10, 4]} />
-      <OrbitControls />
+      {/* <OrbitControls /> */}
     </>
   );
 }
 
-function App() {
+function TrippyBoxes() {
   return (
-    <>
-      <Canvas camera={{ position: [0, 0, 15], near: 5, far: 40 }}>
-        <Scene />
-        <Boxes />
-      </Canvas>
-    </>
+    <Canvas colorManagement camera={{ position: [0, 0, 15], near: 5, far: 40 }}>
+      <Scene />
+      <Boxes />
+    </Canvas>
   );
 }
 
-export default App;
+export default TrippyBoxes;

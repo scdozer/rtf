@@ -1,31 +1,40 @@
-import React, { Suspense } from "react";
-import { Canvas } from "react-three-fiber";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import TrippyRoom from "./containers/TrippyRoom";
+import TrippyBoxes from "./containers/TrippyBoxes";
+import TrippyPyramid from "./containers/TrippyPyramid";
 
-import Ball from "./components/Ball";
-import Sphere from "./components/Sphere";
-import Cube from "./components/Cube";
-
-import "./App.css";
-
-function App() {
+export default function App() {
   return (
-    <Canvas
-      colorManagement
-      pixelRatio={window.devicePixelRatio}
-      camera={{ position: [0, 0, 5] }}
-    >
-      <ambientLight intensity={0.5} />
-      <spotLight intensity={0.8} position={[2, 2, 3]} />
-      <Ball />
-      <Suspense fallback={null}>
-        {/* <Sphere color="black" position={[1, 0, 0]} />
-        <Sphere color="white" position={[0, 1, 0]} />
-        <Sphere color="black" position={[-1, 0, 0]} />
-        <Sphere color="white" position={[0, -1, 0]} /> */}
-        <Cube scale={[10, 10, 10]} />
-      </Suspense>
-    </Canvas>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/trippy-room">TrippyRoom</Link>
+            </li>
+            <li>
+              <Link to="/trippy-boxes">TrippyBoxes</Link>
+            </li>
+            <li>
+              <Link to="/trippy-pyramid">TrippyPyramid</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="myCanvas">
+          <Switch>
+            <Route path="/trippy-boxes">
+              <TrippyBoxes />
+            </Route>
+            <Route path="/trippy-room">
+              <TrippyRoom />
+            </Route>
+            <Route path="/trippy-pyramid">
+              <TrippyPyramid />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
 }
-
-export default App;
