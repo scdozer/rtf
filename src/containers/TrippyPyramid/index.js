@@ -19,8 +19,6 @@ function Pyramid() {
           const id = i++;
           tempObject.position.set(x, y, z);
           tempObject.rotation.x = Math.sin(z / 2 + time);
-          // Math.sin(x / 2 + time) +
-          // Math.sin(y / 2 + time) + Math.sin(z / 2 + time);
           tempObject.rotation.z = tempObject.rotation.y * 2;
           tempObject.updateMatrix();
           ref.current.setMatrixAt(id, tempObject.matrix);
@@ -30,15 +28,10 @@ function Pyramid() {
 
   return (
     <instancedMesh ref={ref} args={[null, null, 1000]}>
-      <tetrahedronBufferGeometry attach="geometry" args={(5, 10)} />
+      <tetrahedronBufferGeometry attach="geometry" args={[5, 10]} />
       <meshPhongMaterial attach="material" color="teal" />
     </instancedMesh>
   );
-}
-
-function ManyMany() {
-  // const ref = useRef();
-  return <Pyramid />;
 }
 
 function TrippyPyramid() {
@@ -46,7 +39,7 @@ function TrippyPyramid() {
     <Canvas colorManagement camera={{ position: [0, 0, 30], near: 5, far: 40 }}>
       <ambientLight intensity={0.9} />
       <pointLight intensity={0.9} position={[0, 10, 25]} />
-      <ManyMany />
+      <Pyramid />
     </Canvas>
   );
 }
