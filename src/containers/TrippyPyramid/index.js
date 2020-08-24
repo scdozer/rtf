@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import React, { useRef } from "react";
-import { OrbitControls } from "drei";
+// import { OrbitControls } from "drei";
 import { Canvas, useFrame } from "react-three-fiber";
 // import "./App.css";
 
@@ -37,7 +37,7 @@ function Pyramid() {
 }
 
 function ManyMany() {
-  const ref = useRef();
+  // const ref = useRef();
   return <Pyramid />;
 }
 

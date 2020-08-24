@@ -4,9 +4,9 @@ import { useFrame } from "react-three-fiber";
 
 const VERTICES_NUM = 128;
 
-function easeInOutQuad(t) {
-  return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-}
+// function easeInOutQuad(t) {
+//   return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+// }
 
 function Ball() {
   const [cubeRenderTarget] = useState(
@@ -19,9 +19,9 @@ function Ball() {
   const ref = useRef();
   const camera = useRef();
   useFrame(({ clock, gl, scene }) => {
-    const time = clock.getElapsedTime() / 10;
+    // const time = clock.getElapsedTime() / 10;
 
-    const noiseFactor = 2;
+    // const noiseFactor = 2;
 
     // for (let i = 0; i < ref.current.geometry.vertices.length; i++) {
     //   const p = ref.current.geometry.vertices[i];
