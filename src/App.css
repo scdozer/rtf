@@ -43,3 +43,9 @@ a {
   height: 100vh;
   padding: 100px;
 }
+
+@media screen and (max-width: 900px) {
+  .home {
+    padding: 10px;
+  }
+}
