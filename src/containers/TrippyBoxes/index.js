@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import React, { useRef } from "react";
-// import { OrbitControls } from "drei";
+import { OrbitControls } from "drei";
 import { Canvas, useFrame } from "react-three-fiber";
 // import "./App.css";
 
@@ -50,6 +50,7 @@ function Scene() {
 function TrippyBoxes() {
   return (
     <Canvas colorManagement camera={{ position: [0, 0, 15], near: 5, far: 40 }}>
+      <OrbitControls />
       <Scene />
       <Boxes />
     </Canvas>

@@ -1,9 +1,9 @@
-import ReactDOM from "react-dom";
 import * as THREE from "three";
 import React, { useEffect } from "react";
 import { Canvas } from "react-three-fiber";
 import { useSprings, a } from "react-spring/three";
-import "./styles.css";
+import { OrbitControls } from "drei";
+// import "./styles.css";
 
 const number = 35;
 const colors = [
@@ -50,9 +50,10 @@ function Content() {
       <boxBufferGeometry attach="geometry" args={d.args} />
       <a.meshStandardMaterial
         attach="material"
-        color={springs[index].color}
-        roughness={0.75}
-        metalness={0.5}
+        // color={springs[index].color}
+        color="teal"
+        roughness={0.25}
+        metalness={0.3}
       />
     </a.mesh>
   ));
@@ -61,11 +62,11 @@ function Content() {
 function Lights() {
   return (
     <group>
-      <pointLight intensity={0.3} />
+      <pointLight intensity={1} />
       <ambientLight intensity={2} />
       <spotLight
         castShadow
-        intensity={0.2}
+        intensity={0.5}
         angle={Math.PI / 7}
         position={[150, 150, 250]}
         penumbra={1}
@@ -76,13 +77,13 @@ function Lights() {
   );
 }
 
-export default function App() {
+function RandomShapes() {
   return (
-    <Canvas shadowMap camera={{ position: [0, 0, 100], fov: 100 }}>
+    <Canvas shadowMap camera={{ position: [0, 0, 200], fov: 100 }}>
+      <OrbitControls />
       <Lights />
       <Content />
     </Canvas>
   );
 }
-
-ReactDOM.render(<App />, document.getElementById("root"));
+export default RandomShapes;

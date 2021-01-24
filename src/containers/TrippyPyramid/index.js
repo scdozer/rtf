@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import React, { useRef } from "react";
-// import { OrbitControls } from "drei";
+import { OrbitControls } from "drei";
 import { Canvas, useFrame } from "react-three-fiber";
 // import "./App.css";
 
@@ -36,9 +36,10 @@ function Pyramid() {
 
 function TrippyPyramid() {
   return (
-    <Canvas colorManagement camera={{ position: [0, 0, 30], near: 5, far: 40 }}>
+    <Canvas colorManagement camera={{ position: [0, 0, 20], near: 5, far: 40 }}>
+      <OrbitControls />
       <ambientLight intensity={0.9} />
-      <pointLight intensity={0.9} position={[0, 10, 25]} />
+      <pointLight intensity={1} position={[10, 0, 35]} />
       <Pyramid />
     </Canvas>
   );
