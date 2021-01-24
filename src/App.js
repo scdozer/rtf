@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import TrippyRoom from "./containers/TrippyRoom";
 import TrippyBoxes from "./containers/TrippyBoxes";
 import TrippyPyramid from "./containers/TrippyPyramid";
+import RandomShapes from "./containers/RandomShapes";
 import Dotty from "./containers/Dotty";
 import Droppy from "./containers/Droppy";
 import Home from "./containers/Home";
@@ -39,10 +40,10 @@ export default function App() {
             <Route path="/trippy-cube" component={TrippyBoxes} />
             <Route path="/cube-n-shere" component={TrippyRoom} />
             <Route path="/trippy-triangles" component={TrippyPyramid} />
-            <Route path="/shapes" component={TrippyPyramid} />
+            <Route path="/shapes" component={RandomShapes} />
             <Route path="/dotty" component={Dotty} />
             <Route path="/droppy" component={Droppy} />
-            <Route path="/" component={Home}></Route>
+            <Route path="/" component={Home} />
           </Switch>
         </div>
         {/* <div className="footer">

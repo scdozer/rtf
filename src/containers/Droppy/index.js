@@ -1,9 +1,8 @@
-import * as THREE from "three";
-import React, { useMemo } from "react";
+import React from "react";
 import { Canvas, useFrame } from "react-three-fiber";
 import { OrbitControls } from "drei";
 import { Physics, usePlane, useBox } from "use-cannon";
-import niceColors from "nice-color-palettes";
+// import niceColors from "nice-color-palettes";
 // import "./styles.css";
 
 function Plane(props) {
