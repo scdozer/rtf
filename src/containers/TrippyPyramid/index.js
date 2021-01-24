@@ -29,7 +29,7 @@ function Pyramid() {
   return (
     <instancedMesh ref={ref} args={[null, null, 1000]}>
       <tetrahedronBufferGeometry attach="geometry" args={(5, 10)} />
-      <meshPhongMaterial attach="material" color="teal" />
+      <meshPhongMaterial attach="material" color="#5ca4a9" />
     </instancedMesh>
   );
 }

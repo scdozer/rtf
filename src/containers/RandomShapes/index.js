@@ -11,7 +11,7 @@ const colors = [
   "#FCEEB5",
   "#EE786E",
   "#e0feff",
-  "lightpink",
+  "#f4f1bb",
   "lightblue",
 ];
 const random = (i) => {
@@ -51,7 +51,7 @@ function Content() {
       <a.meshStandardMaterial
         attach="material"
         // color={springs[index].color}
-        color="teal"
+        color="#5ca4a9"
         roughness={0.25}
         metalness={0.3}
       />

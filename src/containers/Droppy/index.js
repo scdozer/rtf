@@ -57,7 +57,7 @@ function Cubes({ number }) {
         attach="material"
         vertexColors={THREE.VertexColors}
       /> */}
-      <meshPhongMaterial attach="material" color="teal" />
+      <meshPhongMaterial attach="material" color="#5ca4a9" />
     </instancedMesh>
   );
 }
@@ -68,9 +68,9 @@ function Droppy() {
       shadowMap
       colorManagement
       gl={{ alpha: false }}
-      camera={{ position: [0, 2.5, 5.5], fov: 50 }}
+      camera={{ position: [0, 2.5, 3.5], fov: 50 }}
     >
-      <color attach="background" args={["lightpink"]} />
+      <color attach="background" args={["#f4f1bb"]} />
       <hemisphereLight intensity={0.35} />
       <OrbitControls />
       <spotLight

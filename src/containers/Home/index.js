@@ -6,22 +6,19 @@ import { Canvas, useFrame } from "react-three-fiber";
 
 const tempObject = new THREE.Object3D();
 
-function Boxes() {
+function Pyramid() {
   const ref = useRef();
   useFrame((state) => {
     const time = state.clock.getElapsedTime();
     ref.current.rotation.x = Math.sin(time / 4);
     ref.current.rotation.y = Math.sin(time / 2);
     let i = 0;
-    for (let x = 0; x < 10; x++)
-      for (let y = 0; y < 10; y++)
-        for (let z = 0; z < 10; z++) {
+    for (let x = 0; x < 2; x++)
+      for (let y = 0; y < 2; y++)
+        for (let z = 0; z < 2; z++) {
           const id = i++;
-          tempObject.position.set(5 - x, 5 - y, 5 - z);
-          tempObject.rotation.y =
-            Math.sin(x / 4 + time) +
-            Math.sin(y / 4 + time) +
-            Math.sin(z / 4 + time);
+          tempObject.position.set(x, y, z);
+          tempObject.rotation.x = Math.sin(z / 2 + time);
           tempObject.rotation.z = tempObject.rotation.y * 2;
           tempObject.updateMatrix();
           ref.current.setMatrixAt(id, tempObject.matrix);
@@ -31,30 +28,29 @@ function Boxes() {
 
   return (
     <instancedMesh ref={ref} args={[null, null, 1000]}>
-      <boxBufferGeometry attach="geometry" args={[0.7, 0.7, 0.7]} />
+      <tetrahedronBufferGeometry attach="geometry" args={(5, 10)} />
       <meshPhongMaterial attach="material" color="#5ca4a9" />
     </instancedMesh>
   );
 }
 
-function Scene() {
+function Home() {
   return (
-    <>
-      <ambientLight intensity={0.5} />
-      <pointLight castShadow={true} intensity={0.6} position={[0, 10, 4]} />
-      {/* <OrbitControls /> */}
-    </>
+    <div className="home">
+      <h2>buncha useless shit</h2>
+      <h1>
+        by{" "}
+        <a target="_blank" href="https://scottcardoza.com">
+          scott cardoza
+        </a>
+      </h1>
+      <p>
+        you can click/drag and zoom in/out on all the 3d modles.built with
+        react-three-fiber and other pmndrs libraries.
+      </p>
+      <p>most code is based of tutorials. credit given after i get rich.</p>
+    </div>
   );
 }
 
-function TrippyBoxes() {
-  return (
-    <Canvas colorManagement camera={{ position: [0, 0, 15], near: 5, far: 40 }}>
-      <OrbitControls />
-      <Scene />
-      <Boxes />
-    </Canvas>
-  );
-}
-
-export default TrippyBoxes;
+export default Home;

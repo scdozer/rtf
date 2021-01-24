@@ -1,19 +1,11 @@
-import React, { useContext } from "react";
-import {
-  BrowserRouter as Router,
-  __RouterContext,
-  Switch,
-  Route,
-  Link,
-} from "react-router-dom";
-import { createBrowserHistory } from "history";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import TrippyRoom from "./containers/TrippyRoom";
 import TrippyBoxes from "./containers/TrippyBoxes";
 import TrippyPyramid from "./containers/TrippyPyramid";
-import RandomShapes from "./containers/RandomShapes";
 import Dotty from "./containers/Dotty";
 import Droppy from "./containers/Droppy";
-import { useTransition, animated } from "react-spring";
+import Home from "./containers/Home";
 
 export default function App() {
   return (
@@ -22,49 +14,35 @@ export default function App() {
         <nav>
           <ul>
             <li>
-              <Link to="trippy-room">TrippyRoom</Link>
+              <Link to="trippy-triangles">trippy triangles</Link>
             </li>
             <li>
-              <Link to="trippy-boxes">TrippyBoxes</Link>
+              <Link to="trippy-cube">trippy cube</Link>
             </li>
             <li>
-              <Link to="trippy-pyramid">TrippyPyramid</Link>
+              <Link to="cube-n-shere">trippin cube n sphere</Link>
             </li>
             <li>
-              <Link to="random-shapes">Shapes</Link>
+              <Link to="shapes">trippin shapes</Link>
             </li>
             <li>
-              <Link to="dotty">Dotty</Link>
+              <Link to="dotty">dot blowout</Link>
             </li>
             <li>
-              <Link to="droppy">Droppy</Link>
+              <Link to="droppy">fallout cubes</Link>
             </li>
           </ul>
         </nav>
 
         <div className="myCanvas">
           <Switch>
-            <Route path="/trippy-boxes">
-              <TrippyBoxes />
-            </Route>
-            {/* <Route path="/">
-              <TrippyBoxes />
-            </Route> */}
-            <Route path="/trippy-room">
-              <TrippyRoom />
-            </Route>
-            <Route path="/trippy-pyramid">
-              <TrippyPyramid />
-            </Route>
-            <Route path="/random-shapes">
-              <RandomShapes />
-            </Route>
-            <Route path="/dotty">
-              <Dotty />
-            </Route>
-            <Route path="/droppy">
-              <Droppy />
-            </Route>
+            <Route path="/trippy-cube" component={TrippyBoxes} />
+            <Route path="/cube-n-shere" component={TrippyRoom} />
+            <Route path="/trippy-triangles" component={TrippyPyramid} />
+            <Route path="/shapes" component={TrippyPyramid} />
+            <Route path="/dotty" component={Dotty} />
+            <Route path="/droppy" component={Droppy} />
+            <Route path="/" component={Home}></Route>
           </Switch>
         </div>
         {/* <div className="footer">

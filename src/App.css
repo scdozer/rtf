@@ -23,7 +23,7 @@ body,
   color: teal;
 }
 body {
-  background: lightpink;
+  background: #f4f1bb;
 }
 
 nav {
@@ -35,4 +35,11 @@ nav {
 a {
   text-decoration: none;
   color: teal;
+}
+
+.home {
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  padding: 100px;
 }
