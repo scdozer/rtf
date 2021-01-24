@@ -43,7 +43,7 @@ function Content() {
         () => set((i) => ({ ...random(i), delay: i * 40 })),
         3000
       ),
-    []
+    [set]
   );
   return data.map((d, index) => (
     <a.mesh key={index} {...springs[index]} castShadow receiveShadow>
