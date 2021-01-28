@@ -16,10 +16,9 @@ function Home() {
         </a>
       </h1>
       <p>
-        you can click/drag and zoom in/out on all the 3d modles.built with
+        you can click/drag and zoom in/out on all the 3d modles. built with
         react-three-fiber and other pmndrs libraries.
       </p>
-      <p>most code is based of tutorials. credit given after i get rich.</p>
     </div>
   );
 }
